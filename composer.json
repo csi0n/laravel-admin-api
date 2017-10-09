@@ -1,0 +1,27 @@
+{
+    "name": "csi0n/laravel-admin-api",
+    "description": "laravel admin api",
+    "type": "metapackage",
+    "authors": [
+        {
+            "name": "csi0n",
+            "email": "chqssqll@gmaill.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework":"^5.4",
+        "csi0n/entrust-dev":"^4.0",
+        "csi0n/laravel-datatables": "^1.5",
+        "csi0n/laravel-request": "^1.0",
+        "mews/captcha": "^2.1"
+    },
+    "autoload":{
+        "files":[
+            "helpers/common.php"
+        ],
+        "psr-4":{
+            "csi0n\\LaravelAdminApi\\":"src/"
+        }
+    }
+}
