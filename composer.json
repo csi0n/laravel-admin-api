@@ -1,7 +1,6 @@
 {
     "name": "csi0n/laravel-admin-api",
     "description": "laravel admin api",
-    "type": "metapackage",
     "authors": [
         {
             "name": "csi0n",
