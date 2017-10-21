@@ -18,4 +18,5 @@ class PermissionRequest extends CLaravelRequest
     {
         // TODO: Implement setCRule() method.
     }
+
 }

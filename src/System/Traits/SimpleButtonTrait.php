@@ -42,7 +42,6 @@ trait SimpleButtonTrait
             $appendButton = [];
         }
 
-
         return array_flatten(
             array_filter(
                 array_merge($appendButton, [

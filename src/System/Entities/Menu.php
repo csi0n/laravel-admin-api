@@ -24,7 +24,6 @@ class Menu extends Model
         'sort',
         'status'
     ];
-    protected $dateFormat = 'U';
 
     public function scopeStatus($query, $status = 'enable')
     {

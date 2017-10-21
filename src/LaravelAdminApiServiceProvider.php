@@ -44,6 +44,7 @@ class LaravelAdminApiServiceProvider extends ServiceProvider
         CLaravelRequestServiceProvider::class,
         CaptchaServiceProvider::class,
         EntrustServiceProvider::class,
+        LaravelAdminApiRouteServiceProvider::class
     ];
 
     protected $aliases = [
@@ -64,7 +65,11 @@ class LaravelAdminApiServiceProvider extends ServiceProvider
 
         $this->registerFacades();
 
-        $this->mergeConfig();
+        $this->publishConfig();
+
+        $this->publishMigrations();
+
+        $this->publishSeeds();
     }
 
     private function registerServiceProvider()
@@ -76,16 +81,38 @@ class LaravelAdminApiServiceProvider extends ServiceProvider
 
     private function registerFacades()
     {
+        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
         foreach ($this->aliases as $k => $alias) {
-            $this->app->alias($k, $alias);
+            $loader->alias($k, $alias);
         }
     }
 
-    private function mergeConfig()
+
+    private function publishConfig()
     {
-        $this->mergeConfigFrom(
-            __DIR__ . '/System/Config/config.php', 'laravel-admin-api'
-        );
+        $this->publishes([
+            __DIR__ . '/../configs/config.php' => config_path('laravel-admin-api.php'),
+            __DIR__ . '/../configs/config-entrust.php' => config_path('entrust.php'),
+        ]);
+    }
+
+    private function publishMigrations()
+    {
+        $this->publishes([
+            __DIR__ . '/../database/migrations/menus_table' => database_path('migrations/2017_10_09_000010_create_menus_table.php'),
+            __DIR__ . '/../database/migrations/rbac_setup_tables' => database_path('migrations/2017_10_09_000020_create_rbac_setup_tables.php'),
+            __DIR__ . '/../database/migrations/users_table' => database_path('migrations/2017_10_09_000030_create_users_table.php')
+        ]);
+    }
+
+    private function publishSeeds()
+    {
+        $this->publishes([
+            __DIR__ . '/../database/seeds/MenusSeeder' => database_path('seeds/MenusSeeder.php'),
+            __DIR__ . '/../database/seeds/PermissionsSeeder' => database_path('seeds/PermissionsSeeder.php'),
+            __DIR__ . '/../database/seeds/RolesSeeder' => database_path('seeds/RolesSeeder.php'),
+            __DIR__ . '/../database/seeds/UsersSeeder' => database_path('seeds/UsersSeeder.php')
+        ]);
     }
 
 

@@ -13,35 +13,8 @@ Route::group(['prefix' => 'menu', 'as' => 'menu.'], function ($router) {
 });
 Route::resource('menu', 'MenuController');
 
-Route::resource('permission', 'PermissionController', [
-    'only' => [
-        'index',
-        'store',
-        'edit',
-        'update',
-        'destroy',
-        'show'
-    ]
-]);
+Route::resource('permission', 'PermissionController');
 
-Route::resource('role', 'RoleController', [
-    'only' => [
-        'index',
-        'store',
-        'edit',
-        'update',
-        'destroy',
-        'show'
-    ]
-]);
+Route::resource('role', 'RoleController');
 
-Route::resource('user', 'UserController', [
-    'only' => [
-        'store',
-        'edit',
-        'update',
-        'destroy',
-        'show',
-        'index'
-    ]
-]);
+Route::resource('user', 'UserController');

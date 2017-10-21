@@ -20,7 +20,8 @@
             "helpers/common.php"
         ],
         "psr-4":{
-            "csi0n\\LaravelAdminApi\\":"src/"
+            "csi0n\\LaravelAdminApi\\":"src/",
+            "csi0n\\LaravelAdminApi\\Tests":"tests/"
         }
     }
 }

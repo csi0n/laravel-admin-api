@@ -15,6 +15,7 @@ use csi0n\LaravelAdminApi\System\Repositories\RoleRepository;
 use csi0n\LaravelAdminApi\System\Repositories\UserRepository;
 use Illuminate\Support\Collection;
 use DB;
+use DatatablesRepository;
 
 class UserService
 {
