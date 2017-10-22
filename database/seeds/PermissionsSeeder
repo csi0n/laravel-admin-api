@@ -56,7 +56,7 @@ EOF
             'description' => '删除用户',
             'class_settings' => <<<EOF
 class|csi0n\LaravelAdminApi\System\Http\Controllers\UserController[destroy]
-button|csi0n\LaravelAdminApi\System\Entities\UserController[destroy]
+button|csi0n\LaravelAdminApi\System\Entities\User[destroy]
 EOF
         ]);
         factory(\csi0n\LaravelAdminApi\System\Entities\Permission::class)->create([

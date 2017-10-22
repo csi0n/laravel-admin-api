@@ -7,8 +7,8 @@
  */
 return [
     'prefix'=>'laravel-admin-api/api',
-    'authMiddleware'=>'api',
-    'otherMiddleware'=>'web',
+    'authMiddleware'=>['web'],
+    'otherMiddleware'=>['web','simpleCheckPermission'],
     'datatables' => [
         'permission' => [
             'enableAction' => true,
