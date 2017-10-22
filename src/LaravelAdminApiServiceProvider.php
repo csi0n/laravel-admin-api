@@ -99,9 +99,9 @@ class LaravelAdminApiServiceProvider extends ServiceProvider
     private function publishMigrations()
     {
         $this->publishes([
+	        __DIR__ . '/../database/migrations/users_table' => database_path('migrations/2017_10_09_000000_create_users_table.php'),
             __DIR__ . '/../database/migrations/menus_table' => database_path('migrations/2017_10_09_000010_create_menus_table.php'),
             __DIR__ . '/../database/migrations/rbac_setup_tables' => database_path('migrations/2017_10_09_000020_create_rbac_setup_tables.php'),
-            __DIR__ . '/../database/migrations/users_table' => database_path('migrations/2017_10_09_000030_create_users_table.php')
         ]);
     }
 
