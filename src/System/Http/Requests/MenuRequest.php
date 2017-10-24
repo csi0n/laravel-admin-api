@@ -18,4 +18,9 @@ class MenuRequest extends CLaravelRequest
     {
 
     }
+
+    public function authorize()
+    {
+        return \Auth::check();
+    }
 }

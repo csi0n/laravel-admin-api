@@ -11,7 +11,7 @@
         "php": ">=7.0.0",
         "laravel/framework":"^5.4",
         "csi0n/entrust-dev":"^4.0",
-        "csi0n/laravel-datatables": "^1.5",
+        "csi0n/laravel-datatables": "^2.0",
         "csi0n/laravel-request": "^1.0",
         "mews/captcha": "^2.1"
     },

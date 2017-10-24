@@ -18,5 +18,8 @@ class PermissionRequest extends CLaravelRequest
     {
         // TODO: Implement setCRule() method.
     }
-
+    public function authorize()
+    {
+        return \Auth::check();
+    }
 }

@@ -20,4 +20,8 @@ class SortMenuRequest extends CLaravelRequest
             'itemParentId'=>'required|numeric'
         ]);
     }
+    public function authorize()
+    {
+        return \Auth::check();
+    }
 }
