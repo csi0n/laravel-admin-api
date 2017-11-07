@@ -42,10 +42,10 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         if ($this->userService->store($request)) {
-            return ApiResponseService::success();
+            return $this->success();
         }
 
-        return ApiResponseService::fail();
+        return $this->failed();
     }
 
     /**
